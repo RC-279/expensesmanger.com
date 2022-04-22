@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CRUD with firestore</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h3>List Member</h3>
+    </header>
+    <div class="table-wrapper">
+      <table class="table-users">
+        <tr>
+          <th>Date</th>
+          <th>Particulars</th>
+          <th>Amount Spent</th>
+          <th>Remarks</th>
+          <th>Action</th>
+        </tr>
+      </table>
+      <button class="btn btn-add">Add Bill</button>
+    </div>
+    <!-- Add Modal -->
+    <div class="add-modal modal-wrapper">
+      <div class="modal">
+        <div class="modal-header"><h3>Add Bill</h3></div>
+        <div class="modal-body">
+          <form class="form" autocomplete="off">
+            <input type="date" name="Date" placeholder="Date">
+            <input type="text" name="Particulars" placeholder="Particulars">
+            <input type="number" name="Amountspent" placeholder="Amountspent">
+            <input type="text" name="remarks" placeholder="Remarks">
+            <button class="btn btn-modal">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Edit Modal -->
+    <div class="edit-modal modal-wrapper">
+      <div class="modal">
+        <div class="modal-header"><h3>Edit Bill</h3></div>
+        <div class="modal-body">
+          <form class="form" autocomplete="off">
+            <input type="date" name="Date" placeholder="Date">
+            <input type="text" name="Particulars" placeholder="Particulars">
+            <input type="number" name="Amountspent" placeholder="Amountspent">
+            <input type="text" name="remarks" placeholder="Remarks">
+            <button class="btn btn-modal">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-app.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+      https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-firestore.js"></script>
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyD7DX7WmMYZsBhe4hbJbWW_s3lcI4og-20",
+    authDomain: "exps-49070.firebaseapp.com",
+    databaseURL: "https://exps-49070-default-rtdb.firebaseio.com",
+    projectId: "exps-49070",
+    storageBucket: "exps-49070.appspot.com",
+    messagingSenderId: "31487090142",
+    appId: "1:31487090142:web:9c8196af4a9c25dea0914f"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+  </script>
+  <script src="./script.js"></script>
+</body>
+</html>
